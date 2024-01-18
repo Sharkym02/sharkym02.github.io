@@ -1,2 +1,4 @@
 # sharkym02.github.io
-WEB200 SP24 Eric Mattner
+Eric Mattner
+WEB 200 SP24
+
