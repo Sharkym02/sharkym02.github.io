@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="WEB200 Assignment 1">
+<title>WEB200 Assignment 1</title>
+<meta charset="utf-8">
+<script src="script.js"></script>
+<script> function write () { document.write("Hello Eric!"); }</script>
+</head>
+<body>
+<header>WEB200 Assignment Directory</header>
+<main>
+    <h1> Write </h1>
+    <p>
+        <script> write() </script>
+        <br>
+        This script uses document.write to place the text in the browser.
+    </p>
+    <h1> Alert </h1>
+    <p>
+        <button type="button" onclick="HelloAlert()"> Hello Eric </button>
+        <br>
+        This script creates a pop up dialog that says "Hello Eric!" on button click.
+    </p>
+    <h1> getElementById </h1>
+    <p id="getElement">
+        This script uses the button below to change its text using getElementById.
+        <br>
+        <button type="button" onclick="getElement()"> Change Text </button>
+    </p>
+    <h1> console.log </h1>
+    <p id="getElement">
+        This script outputs "Hello Eric!" to the console on button click.
+        <br>
+        <button type="button" onclick="console()"> Change Text </button>
+    </p>
+    <br>
+    <p>
+        <noscript>
+            Your browser does not support Javascript. Please enable Javascript to use functions.
+        </noscript>
+    </p>
+</main>
+<script>
+    function HelloAlert(){
+        window.alert("Hello Eric!");
+    }
+</script>
+</body>
+</html>
