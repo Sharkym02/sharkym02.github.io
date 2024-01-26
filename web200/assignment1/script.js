@@ -3,6 +3,6 @@ function getElement() {
     element = document.getElementById("getElement").innerText = "Hello Eric!";
 }
 // This function outputs text using the console log
-function console() {
+function consoleOut() {
     console.log("Hello Eric!");
 }
