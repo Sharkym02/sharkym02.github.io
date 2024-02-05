@@ -14,7 +14,20 @@
         <p>
             This function will take your hours worked, as well as your hourly rate and output your weekly, monthly, and annual gross pay
             <br>
-            <button type="button" onclick="HelloAlert()"> Calcualate </button></p>
+            <button type="button" onclick="Calculate()"> Calculate </button>
+            <br>
+        </p>
 </main>
+<script>
+    function Calculate() {
+        var hours = window.prompt("How many hours do you work a week?");
+        var rate = window.prompt("What is your hourly rate?");
+        var weekly = hours * rate;
+        var monthly = weekly * 4;
+        var annual = monthly * 13;
+        // window.alert("You make " + weekly + " dollars a week, " + monthly + " dollars a month, and " + annual + " dollars a year.")
+        document.write("You make " + weekly + " dollars a week, " + monthly + " dollars a month, and " + annual + " dollars a year.")
+    }
+</script>
 </body>
 </html>
