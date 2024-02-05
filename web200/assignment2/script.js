@@ -6,7 +6,7 @@ function StringOperate() {
     var number2 = Number(num2);
     var float1 = number1.toFixed(number1);
     var float2 = number2.toFixed(number2);
-    window.alert("The numbers you input are " + number1 + " and " + number2 + ", and they concatenate into " + num1 + num2  + ".")
+    window.alert("The numbers you input are " + float1 + " and " + float2 + ", and they concatenate into " + num1 + num2  + ".")
     //document.write("The numbers you input are " + number1 + " and " + number2 + ", and they concatenate into " + num1 + num2  + ".");
 }
 // this function calculates your pay over several time periods
