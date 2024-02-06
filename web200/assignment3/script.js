@@ -6,7 +6,7 @@ function CalculatePaint() {
     var cover = window.prompt("How many square feet will a gallon of paint cover");
     var cost = window.prompt("How expensive is a gallon of paint");
     area = 2 * length * height + 2 * width * height;
-    gallons = math.ceil(area / cover);
+    gallons = Math.ceil(area / cover);
     totalCost = gallons * cost;
     window.alert("You need " + gallons + " gallons of paint, and it will cost " + totalCost + " dollars")
     //document.write("The numbers you input are " + number1 + " and " + number2 + ", and they concatenate into " + num1 + num2  + ".");
