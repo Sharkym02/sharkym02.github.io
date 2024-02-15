@@ -9,3 +9,5 @@ Assignment 1- I established a directory for all of my assignments as well as lea
 Assignment 2- I developed more thorough functions that do many calculations using javacsript, and sending their outputs in various places.
 
 Assignment 3- I learned how to take user inputs as my javascript functions.
+
+Assignment 4- I learned how to create input fields in the HTML, and take those inputs and utilize them for my javascript functions, as well as directly display the javascript outputs as text on the website.
