@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="WEB200 Assignment 5 Conditions">
+<title>WEB200 Assignment 5 Conditions</title>
+<meta charset="utf-8">
+<script type = "text/Javascript" src="script.js"></script>
+</head>
+<body>
+<header>WEB200 Assignment 5</header>
+<main>
+    <h1> Gross Pay Calculation </h1>
+        <p>
+            This function will take your hours worked, as well as your hourly rate and output your weekly, monthly, and annual gross pay, and has a toggle for whether you would like to account for overtime pay(1.5x).
+            <br>
+            Hours: <input type="number" id="hours" name="hours">
+            <br>
+            Rate: <input type="number" id="rate" name="rate">
+            <br>
+            Account for overtime pay? 
+            <input type ="checkbox" id = "overtime" name = "overtime">
+            <br>
+            <button type="button" onclick="CalculatePay()"> Calculate </button>
+            <br>
+            <p id="GrossPay"></p>
+        </p>
+    <h1> Age Calculator </h1>
+        <p>
+            This function takes in your years of age, and outputs your age in any of months, days, hours, and seconds.
+            <br>
+            Age(in years): <input type="number" id="age" name="age">
+            <br>
+            Would you like to know how old you are in:
+            <br>
+            Months?
+            <input type ="checkbox" id = "Months" name = "Months">
+            <br>
+            Days?
+            <input type ="checkbox" id = "Days" name = "Days">
+            <br>
+            Hours?
+            <input type ="checkbox" id = "Hours" name = "Hours">
+            <br>
+            Seconds?
+            <input type ="checkbox" id = "Seconds" name = "Seconds">
+            <br>
+            <button type="button" onclick="CalculateAge()"> Calculate </button>
+            <br>
+            <p id="ageCalc"></p>
+        </p>
+</main>
+</body>
+</html>
