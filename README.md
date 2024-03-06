@@ -11,3 +11,7 @@ Assignment 2- I developed more thorough functions that do many calculations usin
 Assignment 3- I learned how to take user inputs as my javascript functions.
 
 Assignment 4- I learned how to create input fields in the HTML, and take those inputs and utilize them for my javascript functions, as well as directly display the javascript outputs as text on the website.
+
+Assignment 5- I learned how to incorporate if//else statements into my javascript/html webpages, as well as how to use checkboxes to make my functions perform differently based on whether they are checked or unchecked.
+
+Assignments 6/7 - I learned how to use loops in my javascript code, as well as learned what kind of applications these loops should be used for.
