@@ -3,7 +3,7 @@ function calculateAverage() {
     let values = [];
     for (let i = 0; i < number; i++) {
             p = i+1;
-            values[i] == parseInt(prompt("What is score number " + p + "?"));
+            values[i] = parseInt(prompt("What is score number " + p + "?"));
     }
     let sum = 0; 
     for (let i=0; i < number; i++) {
