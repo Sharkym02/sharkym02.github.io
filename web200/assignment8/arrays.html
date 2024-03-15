@@ -5,7 +5,7 @@
 <meta name="description" content="WEB200 Assignment 8 Arrays">
 <title>WEB200 Assignment 8</title>
 <meta charset="utf-8">
-<script type = "text/Javascript" src="script.js"></script>
+<!-- <script type = "text/Javascript" src="script.js"></script> -->
 </head>
 <body>
 <header>WEB200 Assignment 8 Arrays</header>
@@ -21,5 +21,20 @@
             <p id="scores"></p>
         </p>
 </main>
+<script>
+function calculateAverage() {
+    var number = document.getElementById("number").value;
+    var values = [];
+    for (let i = 0; i < number; i++) {
+            p = i+1;
+            values[i] == parseInt(prompt("What is score number " + p + "?"));
+    }
+    var sum = 0;
+    for (let i=0; i < values.length; i++) {
+        sum += values[i];
+    }
+    document.getElementById("scores").innerText = sum;
+}
+</script>
 </body>
 </html>

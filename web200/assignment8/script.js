@@ -1,3 +1,4 @@
+/*
 function calculateAverage() {
     var number = document.getElementById("number").value;
     var values = [];
@@ -11,3 +12,4 @@ function calculateAverage() {
     }
     document.getElementById("scores").innerText = sum;
 }
+*/
