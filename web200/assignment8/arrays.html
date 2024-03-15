@@ -15,26 +15,15 @@
             This program prompts the user for their choice of a number of scores, then calculates the average of all of the scores
             <br>
             Number of Scores: <input type="number" id="number" name="number">
+            Number of 1: <input type="number" id="one" name="one">
+            Number of 2: <input type="number" id="ones" name="ones">
+
+            Number of 3: <input type="number" id="oness" name="oness">
             <br>
             <button type="button" onclick="calculateAverage()"> Calculate </button>
             <br>
             <p id="scores"></p>
         </p>
 </main>
-<script>
-function calculateAverage() {
-    var number = document.getElementById("number").value;
-    var values = [];
-    for (let i = 0; i < number; i++) {
-            p = i+1;
-            values[i] == parseInt(prompt("What is score number " + p + "?"));
-    }
-    var sum = 0;
-    for (let i=0; i < values.length; i++) {
-        sum += values[i];
-    }
-    document.getElementById("scores").innerText = sum;
-}
-</script>
 </body>
 </html>
