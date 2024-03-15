@@ -1,6 +1,6 @@
 function calculateAverage() {
     var number = document.getElementById("number").value;
-    var values = [];
+    var values = new Array(number);
     for (let i = 0; i < number; i++) {
             p = i+1;
             values[i] == parseInt(prompt("What is score number " + p + "?"));
