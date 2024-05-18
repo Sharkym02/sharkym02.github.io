@@ -35,14 +35,19 @@
 const obj = null;
 
 
-let xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function () {
-    if (this.readyState === 4 && this.status === 200) {
-        obj = JSON.parse(this.responseText);
-        console.log(this.responseText);
+function loadJSON() {
+    const xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            let updateText = JSON.parse(this.responseText);
+            console.log(typeof updateText);
+        
+            obj = JSON.parse(this.responseText);
+            console.log(this.responseText);
+        };
+        xhttp.open('GET', "pizza.json");
+        xhttp.send();
     }
-    xhttp.open('GET', "pizza.json");
-    xhttp.send();
 }
 
 //const obj = JSON.parse(json);
@@ -129,9 +134,9 @@ function addPizza() {
 }
 
 
-window.onload = updateToppings;
+window.onload = updateToppings();
 
-//window.onload = loadJSON;
+window.onload = loadJSON();
 
 </script>
 </body>
