@@ -20,10 +20,24 @@
     <button onclick=updateOrder()> update</button>
     <p id="order"></p>
     <p id="test"></p>
+    <br>
+    <form id="customer">
+        <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
+        <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required><br>
+        <label for="phone">Phone Number (xxx-xxx-xxxx):</label>
+            <input type="tel" id="phone" placeholder="xxx-xxx-xxxx" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required><br>
+        <input type="submit">
+    </form>
 </main>
 <script>
+/*
 const json = '{"toppings":["pepperoni", "sausage", "extra cheese", "pineapple", "pepper", "mushrooms", "bacon", "anchovies", "spinach", "meatballs"], "sizes":["small (8 in. $8.95)", "medium (10 in. $12.95)", "large (12 in. $16.95)"]}'
 const obj = JSON.parse(json);
+*/
+fetch('pizza.json')
+    .then((response) => response.json())
 
 var sizeSelect = document.getElementById("size");
 
@@ -50,7 +64,7 @@ function updateToppings() {
     let text2 = "<form id = 'toppings'>";
         for (let x in obj.toppings) {
             text2 += "<input type = 'checkbox' name = " + obj.toppings[x] + "" + obj.toppings[x];
-            text2 += "<label for=" + obj.toppings[x] + " type = 'checkbox' >" + obj.toppings[x] + "(+$" + toppingPrice + ")" + "</label> <br>";
+            text2 += "<label for=" + obj.toppings[x] + " type = 'checkbox' >" + obj.toppings[x] + " (+$" + toppingPrice + ")" + "</label> <br>";
 }
 text += "</form>";
 document.getElementById("toppings").innerHTML = text2;
@@ -63,7 +77,7 @@ const order = {
 }
 
 function updateOrder() {
-    var text = "";
+    var text = "<br>";
     var totalCost = 0;
     for (let x in order.pizzas) {
         var unitCost = 0;
@@ -88,7 +102,7 @@ function updateOrder() {
         totalCost += unitCost;
     }
     var tax = totalCost * 0.1;
-    text += "Items: $" + totalCost.toFixed(2) + "<br> Tax: $" + tax.toFixed(2) + "<br> Total: $" + (totalCost + tax).toFixed(2);
+    text += "<br>Items: $" + totalCost.toFixed(2) + "<br> Tax: $" + tax.toFixed(2) + "<br> Total: $" + (totalCost + tax).toFixed(2);
     document.getElementById("order").innerHTML = text;
 }
 
