@@ -134,6 +134,7 @@ function addPizza() {
     const newPizza = {size: newSize, toppings: newToppings};
     order.pizzas.push(newPizza);
     updateOrder();
+    loadJSON();
 }
 
 
