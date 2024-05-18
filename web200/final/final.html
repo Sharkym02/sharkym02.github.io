@@ -16,10 +16,7 @@
         <br>
         <p id="toppings"></p>
     <button onclick=addPizza()> Add Pizza</button>
-    <button onclick=test()> test</button>
-    <button onclick=updateOrder()> update</button>
     <p id="order"></p>
-    <p id="test"></p>
     <br>
     <form id="customer">
         <label for="name">Name:</label>
@@ -50,7 +47,7 @@ function loadJSON() {
 }
 */
 
-let obj = null;
+//let obj = null;
 /*
 fetch("pizza.json")
   .then((res) => res.json())
@@ -58,15 +55,18 @@ fetch("pizza.json")
     obj = JSON.parse(data);
   });
 */
-
+/*
 async function loadJSON() {
     let file = "pizza.json";
     
     json = await fetch(file);
     obj = JSON.parse(obj);
 }
+*/
 
-//obj = JSON.parse(json);
+import json from "JSONFilePath" assert {type: 'json'};
+
+obj = JSON.parse(json);
 
 var sizeSelect = document.getElementById("size");
 
