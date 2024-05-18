@@ -11,7 +11,117 @@
 <header>WEB200 Final Project- Pizza Orders</header>
 <main>
     <h1> Order Here </h1>
-        <p>  </p>
+        <select id="size"></select>
+        <br>
+        <br>
+        <p id="toppings"></p>
+    <button onclick=addPizza()> Add Pizza</button>
+    <button onclick=test()> test</button>
+    <button onclick=updateOrder()> update</button>
+    <p id="order"></p>
+    <p id="test"></p>
 </main>
+<script>
+const json = '{"toppings":["pepperoni", "sausage", "extra cheese", "pineapple", "pepper", "mushrooms", "bacon", "anchovies", "spinach", "meatballs"], "sizes":["small (8 in. $8.95)", "medium (10 in. $12.95)", "large (12 in. $16.95)"]}'
+const obj = JSON.parse(json);
+
+var sizeSelect = document.getElementById("size");
+
+let text = "<select>";
+for (let x in obj.sizes) {
+    text += "<option value=" + obj.sizes[x] + ">" + obj.sizes[x] + "</option>";
+}
+text += "</select>";
+sizeSelect.innerHTML=text;
+
+sizeSelect.onchange = (event) => {
+    updateToppings();
+}
+
+
+function updateToppings() {
+    var toppingPrice = 0;
+    if (sizeSelect.value == "small")
+        toppingPrice = 1.45;
+    if (sizeSelect.value == "medium")
+        toppingPrice = 1.95;
+    if (sizeSelect.value == "large")
+        toppingPrice = 2.45;
+    let text2 = "<form id = 'toppings'>";
+        for (let x in obj.toppings) {
+            text2 += "<input type = 'checkbox' name = " + obj.toppings[x] + "" + obj.toppings[x];
+            text2 += "<label for=" + obj.toppings[x] + " type = 'checkbox' >" + obj.toppings[x] + "(+$" + toppingPrice + ")" + "</label> <br>";
+}
+text += "</form>";
+document.getElementById("toppings").innerHTML = text2;
+
+}
+
+const order = {
+    customer: null,
+    pizzas: []
+}
+
+function updateOrder() {
+    var text = "";
+    var totalCost = 0;
+    for (let x in order.pizzas) {
+        var unitCost = 0;
+        text += "1 " + order.pizzas[x].size;
+        if (order.pizzas[x].size == "small") {
+            unitCost += 8.95;
+            topInc = 1.45;
+        }
+        else if (order.pizzas[x].size == "medium") {
+            unitCost += 12.95;
+            topInc = 1.95;
+        }
+        else if (order.pizzas[x].size == "large") {
+            unitCost += 16.95;
+            topInc = 2.45;
+        }
+        for (let y in order.pizzas[x].toppings) {
+            text += ", " + order.pizzas[x].toppings[y];
+            unitCost+= topInc;
+        }
+        text += "    $" + unitCost.toFixed(2) + "<br>";
+        totalCost += unitCost;
+    }
+    var tax = totalCost * 0.1;
+    text += "Items: $" + totalCost.toFixed(2) + "<br> Tax: $" + tax.toFixed(2) + "<br> Total: $" + (totalCost + tax).toFixed(2);
+    document.getElementById("order").innerHTML = text;
+}
+
+
+
+
+function addPizza() {
+    newSize = sizeSelect.value;
+    newToppings = [];
+    const toppingSelect = document.getElementsByTagName("input");
+    for(let x in toppingSelect) {
+        if (toppingSelect[x].checked) {
+            newToppings.push(obj.toppings[x]);
+        }
+    }
+    const newPizza = {size: newSize, toppings: newToppings};
+    order.pizzas.push(newPizza);
+    updateOrder();
+}
+
+window.onload = updateToppings;
+
+/*
+const sizeOptions = JSON.stringify({})
+const xmlhttp = new XMLHttpRequest();
+xmlhttp.onload = function() {
+    const sizes = JSON.parse(this.responseText);
+    let text = "<select>"
+    for (let x in sizes) {
+        
+    }
+}
+*/
+</script>
 </body>
 </html>
