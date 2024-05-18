@@ -53,9 +53,11 @@ function loadJSON() {
 
 var xml = new XMLHttpRequest();
 xml.onload = function() {
+    document.getElementById("test").innerHTML = "test";
     obj = JSON.parse(this.responseText);
+    document.getElementById("test").innerHTML = "test1";
 };
-xml.open('GET', './pizza.json');
+xml.open('GET', 'pizza.json');
 xml.send();
 
 //const obj = JSON.parse(json);
