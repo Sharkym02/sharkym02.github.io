@@ -36,11 +36,19 @@
 const json = '{"toppings":["pepperoni", "sausage", "extra cheese", "pineapple", "pepper", "mushrooms", "bacon", "anchovies", "spinach", "meatballs"], "sizes":["small (8 in. $8.95)", "medium (10 in. $12.95)", "large (12 in. $16.95)"]}'
 
 */
-fetch('pizza.json')
-    .then((response) => response.json())
-    .then((json) => console.log(json));
+const obj = null;
+function loadJSON() {
+    const xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            obj = JSON.parse(this.responseText);
+        }
+    }
+    xhttp.open("GET", "pizza.json");
+    xhttp.send();
+}
     
-const obj = JSON.parse(json);
+//const obj = JSON.parse(json);
 
 var sizeSelect = document.getElementById("size");
 
