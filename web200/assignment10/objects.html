@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="WEB200 Assignment 10 Objects">
+<title>WEB200 Assignment 10</title>
+<meta charset="utf-8">
+<script type = "text/Javascript" src="script.js"></script>
+</head>
+<body>
+<header>WEB200 Assignment 10 Objects</header>
+<main>
+    <h1> Bibliography </h1>
+        <p>
+            This webpage allows the user to enter the information for several books, then sort them into a Bibliographies in either APA or MLA format.
+        </p>
+        <p> Title: <input type="text" id = "Title"></p>
+        <p> Author's First Name: <input type="text" id = "First"></p>
+        <p> Author's Last Name: <input type="text" id = "Last"></p>
+        <p> Publisher: <input type="text" id = "Publisher"></p>
+        <p> City: <input type="text" id = "City"></p>
+        <p> Year: <input type="text" id = "Year"></p>
+        <p> State: <input type="text" id = "State"></p>
+        <button type = "button" onclick="add_book()"> Add Book </button>
+        <br>
+        <button type = "button" onclick="updateLibOutputAPA()"> APA </button>
+        <button type = "button" onclick="updateLibOutputMLA()"> MLA </button>
+        <p id = "bibliography"></p>
+</main>
+<!--
+<script>
+let library = [];
+
+function Book(title, first, last, publisher, city, year, state) {
+    this.Title = title;
+    this.First = first;
+    this.Last = last;
+    this.Publisher = publisher;
+    this.City = city;
+    this.Year = year;
+    this.State = state;
+    this.apa_text = function() {
+                return (this.Last + ". " + 
+                        this.First[0] + ". (" + 
+                        this.Year + "). " + 
+                        this.Title + ". " + 
+                        this.City + ", " + 
+                        this.State + ". " + 
+                        this.Publisher + ".");
+    };
+    this.mla_text = function() {
+                return (this.Last + ". " + 
+                        this.First[0] + ". " + 
+                        this.Title + ". " + 
+                        this.Publisher + ". " + 
+                        this.Year + ". ");
+    };
+}
+
+function add_book() {
+    const newBook = new Book(document.getElementById("Title").value,
+                            document.getElementById("First").value, 
+                            document.getElementById("Last").value, 
+                            document.getElementById("Publisher").value,
+                            document.getElementById("City").value, 
+                            document.getElementById("Year").value, 
+                            document.getElementById("State").value);
+                            
+    library.push(newBook);
+    updateLibOutputAPA();
+}
+
+function updateLibOutputAPA() {
+    let currBib = "";
+    
+    var node = document.getElementById("bibliography");
+    while (node.firstChild) {
+        node.removeChild(node.firstChild);
+    }
+
+    
+    for(let i=0; i<library.length; i++) {
+        //currBib += library[i].apa_text();
+        //document.getElementById("bibliography").innerText = currBib;
+        const para = document.createElement("p");
+        var node = document.createTextNode("")
+        para.appendChild(node);
+        const element = document.getElementById("bibliography");
+        element.appendChild(para);
+        
+        node.nodeValue = library[i].apa_text();
+    }
+}
+
+function updateLibOutputMLA() {
+    let currBib = "";
+    
+    var node = document.getElementById("bibliography");
+    while (node.firstChild) {
+        node.removeChild(node.firstChild);
+    }
+
+    
+    for(let i=0; i<library.length; i++) {
+        //currBib += library[i].mla_text();
+        //document.getElementById("bibliography").innerText = currBib;
+        const para = document.createElement("p");
+        var node = document.createTextNode("")
+        para.appendChild(node);
+        const element = document.getElementById("bibliography");
+        element.appendChild(para);
+        
+        node.nodeValue = library[i].mla_text();
+    }
+}
+
+</script>
+-->
+</body>
+</html>

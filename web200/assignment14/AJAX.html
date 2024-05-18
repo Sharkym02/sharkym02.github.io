@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="WEB200 Assignment 14 AJAX and JSON">
+<title>WEB200 Assignment 14</title>
+<meta charset="utf-8">
+<script type = "text/Javascript" src="script.js"></script>
+<style>
+</style>
+</head>
+<body>
+<header>WEB200 Assignment 14 AJAX and JSON</header>
+<main>
+    <h1> Personal Information Form </h1>
+        <p id="AJAX">
+            This program prompts the user for some of their personal information in a form, and ensures that their inputs are valid.
+            <br>
+            <form name="form" action="#">
+                <label for="first">First name:</label>
+                <input type="text" id="first" name="first" required><br>
+                <label for="last">Last name:</label>
+                <input type="text" id="last" name="last" required><br>
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required><br>
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" required><br>
+                <label for="region">Region:</label>
+                <input type="text" id="region" name="region" value="United States" required><br>
+                <label for="postal">Postal Code:</label> 
+                <input type="text" id="postal" name="postal" pattern="[0-9]{5}" required><br>
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" placeholder="example@gmail.com" name="email" required><br>
+                <label for="phone">Phone Number (xxx-xxx-xxxx):</label>
+                <input type="tel" id="phone" placeholder="xxx-xxx-xxxx" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required><br>
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required><br>
+                <input id="get" type="submit" value="Get User" onclick=get() disabled>
+                <input id="post" type="submit" value="Add User" onclick=post() disabled>
+              </form>
+            <br>
+        </p>
+</main>
+<script>
+/*
+function user(  first,
+                last,
+                address,
+                city,
+                region,
+                postal,
+                email,
+                phone,
+                dob) {
+                
+                this.first = first;
+                this.last = last;
+                this.address = address;
+                this.city = city;
+                this.region = region;
+                this.postal = postal;
+                this.email = email;
+                this.phone = phone;
+                this.dob = dob;
+}
+function addUser() {
+    const newUser = new user(document.getElementById("first").value,
+                            document.getElementById("last").value, 
+                            document.getElementById("address").value, 
+                            document.getElementById("city").value,
+                            document.getElementById("region").value, 
+                            document.getElementById("postal").value, 
+                            document.getElementById("email").value, 
+                            document.getElementById("phone").value,
+                            document.getElementById("dob").value);
+    return newUser;
+}
+function get() {
+    const xhttp = new XMLHttpRequest();
+    xhttp.onload = function() {
+        document.getElementById("AJAX").innerHTML =
+        this.responseText;
+    }
+    xhttp.open("GET", "https://jsonplaceholder.typicode.com/users")
+    xhttp.send();
+}
+*/
+</script>
+</body>
+</html>
