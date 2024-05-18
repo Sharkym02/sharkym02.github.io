@@ -37,7 +37,7 @@ const obj = null;
 
 
 
-
+/*
 function loadJSON() {
     const xhttp = new XMLHttpRequest();
     xhttp.open('GET', 'pizza.json', true);
@@ -49,7 +49,14 @@ function loadJSON() {
     xhttp.send();
     document.getElementById("test").innerHTML = "test";
 }
-window.onload = loadJSON();
+*/
+
+var xml = new XMLHttpRequest();
+xml.onload = function() {
+    obj = JSON.parse(this.responseText);
+};
+xml.open('GET', './pizza.json');
+xml.send();
 
 //const obj = JSON.parse(json);
 
