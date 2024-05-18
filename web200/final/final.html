@@ -17,6 +17,7 @@
         <p id="toppings"></p>
     <button onclick=addPizza()> Add Pizza</button>
     <p id="order"></p>
+    <p id="test"></p>
     <br>
     <form id="customer">
         <label for="name">Name:</label>
@@ -39,17 +40,14 @@ const obj = null;
 
 function loadJSON() {
     const xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            let updateText = JSON.parse(this.responseText);
-            console.log(typeof updateText);
-        
-            obj = JSON.parse(this.responseText);
-            console.log(this.responseText);
-        };
-        xhttp.open('GET', "/pizza.json");
-        xhttp.send();
-    }
+    let updateText = JSON.parse(xhttp.responseText);
+    document.getElementById("test").innerHTML = "test";
+    console.log(typeof updateText);
+    obj = JSON.parse(xhttp.responseText);
+    console.log(xhttp.responseText);
+    xhttp.open('GET', 'pizza.json', true);
+    xhttp.send();
+    document.getElementById("test").innerHTML = "test";
 }
 window.onload = loadJSON();
 
