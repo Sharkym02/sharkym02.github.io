@@ -51,13 +51,21 @@ function loadJSON() {
 */
 
 let obj = null;
-
+/*
 fetch("pizza.json")
   .then((res) => res.json())
   .then((data) => {
     obj = JSON.parse(data);
   });
+*/
+
+async function loadJSON() {
+    let file = "pizza.json";
     
+    json = await fetch(file);
+    obj = JSON.parse(obj);
+}
+
 //obj = JSON.parse(json);
 
 var sizeSelect = document.getElementById("size");
