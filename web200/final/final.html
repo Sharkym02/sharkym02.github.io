@@ -34,10 +34,13 @@
 <script>
 /*
 const json = '{"toppings":["pepperoni", "sausage", "extra cheese", "pineapple", "pepper", "mushrooms", "bacon", "anchovies", "spinach", "meatballs"], "sizes":["small (8 in. $8.95)", "medium (10 in. $12.95)", "large (12 in. $16.95)"]}'
-const obj = JSON.parse(json);
+
 */
 fetch('pizza.json')
     .then((response) => response.json())
+    .then((json) => console.log(json));
+    
+const obj = JSON.parse(json);
 
 var sizeSelect = document.getElementById("size");
 
