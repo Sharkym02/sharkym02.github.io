@@ -32,10 +32,10 @@
     </form>
 </main>
 <script>
-/*
-const json = '{"toppings":["pepperoni", "sausage", "extra cheese", "pineapple", "pepper", "mushrooms", "bacon", "anchovies", "spinach", "meatballs"], "sizes":["small (8 in. $8.95)", "medium (10 in. $12.95)", "large (12 in. $16.95)"]}'
 
-*/
+//const json = '{"toppings":["pepperoni", "sausage", "extra cheese", "pineapple", "pepper", "mushrooms", "bacon", "anchovies", "spinach", "meatballs"], "sizes":["small (8 in. $8.95)", "medium (10 in. $12.95)", "large (12 in. $16.95)"]}'
+
+
 /*
 const obj = null;
 function loadJSON() {
@@ -49,10 +49,16 @@ function loadJSON() {
     xhttp.send();
 }
 */
-const response = await fetch('pizza.json');
-const obj = await response.json();
+
+let obj = null;
+
+fetch("pizza.json")
+  .then((res) => res.json())
+  .then((data) => {
+    obj = JSON.parse(data);
+  });
     
-//const obj = JSON.parse(json);
+//obj = JSON.parse(json);
 
 var sizeSelect = document.getElementById("size");
 
@@ -138,10 +144,9 @@ function addPizza() {
     updateOrder();
 }
 
-/*
+
 window.onload = updateToppings;
-window.onload = loadJSON;
-*/
+
 
 /*
 const sizeOptions = JSON.stringify({})
