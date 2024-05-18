@@ -32,41 +32,12 @@
 
 //const json = '{"toppings":["pepperoni", "sausage", "extra cheese", "pineapple", "pepper", "mushrooms", "bacon", "anchovies", "spinach", "meatballs"], "sizes":["small (8 in. $8.95)", "medium (10 in. $12.95)", "large (12 in. $16.95)"]}'
 
+let xml = new XMLHttpRequest();
+xml.open('GET', "pizza.json");
 
-/*
-const obj = null;
-function loadJSON() {
-    const xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            obj = JSON.parse(this.responseText);
-        }
-    }
-    xhttp.open("GET", "pizza.json");
-    xhttp.send();
-}
-*/
+const obj = JSON.parse(xml.responseText);
 
-//let obj = null;
-/*
-fetch("pizza.json")
-  .then((res) => res.json())
-  .then((data) => {
-    obj = JSON.parse(data);
-  });
-*/
-/*
-async function loadJSON() {
-    let file = "pizza.json";
-    
-    json = await fetch(file);
-    obj = JSON.parse(obj);
-}
-*/
-
-import json from "JSONFilePath" assert {type: 'json'};
-
-obj = JSON.parse(json);
+xml.send();
 
 var sizeSelect = document.getElementById("size");
 
@@ -135,9 +106,6 @@ function updateOrder() {
     document.getElementById("order").innerHTML = text;
 }
 
-
-
-
 function addPizza() {
     newSize = sizeSelect.value;
     newToppings = [];
@@ -157,18 +125,6 @@ window.onload = updateToppings;
 
 //window.onload = loadJSON;
 
-
-/*
-const sizeOptions = JSON.stringify({})
-const xmlhttp = new XMLHttpRequest();
-xmlhttp.onload = function() {
-    const sizes = JSON.parse(this.responseText);
-    let text = "<select>"
-    for (let x in sizes) {
-        
-    }
-}
-*/
 </script>
 </body>
 </html>
