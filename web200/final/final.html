@@ -34,15 +34,18 @@
 
 const obj = null;
 
-let xml = new XMLHttpRequest();
-xml.open('GET', "pizza.json");
-xml.onreadystatechange = function () {
-    if (xhr.readyState === 4 && xhr.status === 200) {
-        obj = JSON.parse(xml.responseText);
+
+let xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function () {
+    if (this.readyState === 4 && this.status === 200) {
+        obj = JSON.parse(this.responseText);
+        console.log(this.responseText);
     }
-    xml.send();
+    xhttp.open('GET', "pizza.json");
+    xhttp.send();
 }
-//const obj = JSON.parse(xml.responseText);
+
+//const obj = JSON.parse(json);
 
 var sizeSelect = document.getElementById("size");
 
