@@ -27,3 +27,5 @@ Assignment 11 - DOM and BOM will be very useful for making my HTML webpages dyna
 Assignment 12 - Using dynamic html, I developed an improved way to display and acquire the information used in assignment 8.
 
 Assignments 13/14 - Using forms and accessing external files will be essential for most websites, since user data will be stored externally and will be needed to pushed/accessed from an external database. Ensuring that inputs are valid will also be vital to making sure that websites don't crash due to bugs.
+
+Final Project - The methodology of dynamically updating the page using javascript to this degree is fascinating, as well as looping through a JSON string in order to populate fields will be essential to creating robust webpages, as manually creating fields would be a painful process. JSON formatting is not only useful for web scripts, as it is used in any kind of script that can utilize external files, such as settings.

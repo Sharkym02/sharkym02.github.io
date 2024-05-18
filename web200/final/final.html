@@ -31,9 +31,9 @@
 </main>
 <script>
 
-//const json = '{"toppings":["pepperoni", "sausage", "extra cheese", "pineapple", "pepper", "mushrooms", "bacon", "anchovies", "spinach", "meatballs"], "sizes":["small (8 in. $8.95)", "medium (10 in. $12.95)", "large (12 in. $16.95)"]}'
+const json = '{"toppings":["pepperoni", "sausage", "extra cheese", "pineapple", "pepper", "mushrooms", "bacon", "anchovies", "spinach", "meatballs"], "sizes":["small (8 in. $8.95)", "medium (10 in. $12.95)", "large (12 in. $16.95)"]}'
 
-var obj = null;
+//var obj = null;
 
 
 
@@ -51,16 +51,7 @@ function loadJSON() {
 }
 */
 
-var xml = new XMLHttpRequest();
-xml.onload = function() {
-    document.getElementById("test").innerHTML = "test";
-    obj = JSON.parse(this.responseText);
-    document.getElementById("test").innerHTML = "test1";
-};
-xml.open('GET', 'pizza.json');
-xml.send();
-
-//const obj = JSON.parse(json);
+const obj = JSON.parse(json);
 
 var sizeSelect = document.getElementById("size");
 
@@ -141,7 +132,7 @@ function addPizza() {
     const newPizza = {size: newSize, toppings: newToppings};
     order.pizzas.push(newPizza);
     updateOrder();
-    loadJSON();
+    //loadJSON();
 }
 
 
