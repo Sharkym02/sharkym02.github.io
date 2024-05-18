@@ -40,12 +40,12 @@ const obj = null;
 
 function loadJSON() {
     const xhttp = new XMLHttpRequest();
+    xhttp.open('GET', 'pizza.json', true);
     let updateText = JSON.parse(xhttp.responseText);
     document.getElementById("test").innerHTML = "test";
     console.log(typeof updateText);
     obj = JSON.parse(xhttp.responseText);
     console.log(xhttp.responseText);
-    xhttp.open('GET', 'pizza.json', true);
     xhttp.send();
     document.getElementById("test").innerHTML = "test";
 }
